@@ -64,7 +64,7 @@
      </button>
      <h2 class="modal-heading" >Оставьте свои данные, мы вам перезвоним</h2>
 
-     <form class="modal__form" action="" method="">
+     <form action="./." method="GET" class="modal__form">
       <div class="field-container" >
        <label for="name" class="field-container__label" >Имя</label>
        <input class="modal__form__field" id="name" type="text" name="user-name" autocomplete="name" required>
@@ -99,11 +99,11 @@
           </svg>
         </span>
        </label>
-       <p class="acceptance-conditions" >Соглашаюсь с рассылкой и принимаю 
+       <span class="acceptance-conditions" >Соглашаюсь с рассылкой и принимаю 
         <a class="link-contract" href="./.">
           Условия договора
         </a>
-       </p>
+      </span>
       </span>
       <button type="submit" class="modal__form__btn-submit" data-modal>Отправить</button>
      </form>
@@ -450,10 +450,10 @@
     </div>
     <div class="subscription">
       <h3 class="footer-heading-social">Подпишитесь на рассылку</h3>
-      <form action="" method="" class="subscription__form">
+      <form action="./." method="GET" class="subscription__form">
         <input class="subscription__form__field" type="email" name="email" autocomplete="email" placeholder="E-mail" required >
         <button class="subscription__form__button" type="submit">
-          <p>Подписаться</p>
+          Подписаться
           <svg class="subscription__form__field__icon" width="24" height="24">
             <use href="./images/icons/sprite.svg#icon-send"></use>
           </svg>
