@@ -57,7 +57,56 @@
 
   <div class="backdrop is-hidden" data-modal>
     <div class="modal">
-     <button class="" data-modal-close>X</button>
+     <button class="modal__btn-close" data-modal-close>
+       <svg class="modal__btn-close__icon">
+         <use href="./images/icons/sprite.svg#btn-close"></use>
+       </svg>
+     </button>
+     <h2 class="modal-heading" >Оставьте свои данные, мы вам перезвоним</h2>
+
+     <form class="modal__form" action="" method="">
+      <div class="field-container" >
+       <label for="name" class="field-container__label" >Имя</label>
+       <input class="modal__form__field" id="name" type="text" name="user-name" autocomplete="name" required>
+       <svg class="modal__form__icon modal__form__icon-name" width="12" height="12">
+         <use href="./images/icons/sprite.svg#input-name"></use>
+       </svg>
+      </div>
+      <div class="field-container">
+      <label for="telephone" class="field-container__label field-container__label-margin" >Телефон</label>
+      <input type="tel" name="user-telephone" id="telephone" class="modal__form__field" required>
+      <svg class="modal__form__icon modal__form__icon-tel" width="13" height="13">
+        <use href="./images/icons/sprite.svg#input-tel"></use>
+      </svg>
+      </div>
+      <div class="field-container">
+      <label for="mail" class="field-container__label field-container__label-margin">Почта</label>
+      <input type="email" name="email" id="mail" class="modal__form__field" autocomplete="email" required>
+      <svg class="modal__form__icon modal__form__icon-email" width="15" height="12">
+        <use href="./images/icons/sprite.svg#input-email"></use>
+      </svg>
+      </div>
+      <div class="field-container">
+      <label for="comment" class="field-container__label field-container__label-margin">Комментарий</label>
+      <textarea name="user-comment" rows="5" id="comment" placeholder="Введите текст" class="modal__form__field modal__form__field-comment" ></textarea>
+      </div>
+      <span class="field-contract">
+       <label class="label-checkbox" >
+        <input type="checkbox" name="check-contract" class="checkbox" required>
+        <span class="checkbox-container">
+          <svg class="checkbox-icon" width="16" height="15">
+            <use href="./images/icons/sprite.svg#icon-chek"></use>
+          </svg>
+        </span>
+       </label>
+       <p class="acceptance-conditions" >Соглашаюсь с рассылкой и принимаю 
+        <a class="link-contract" href="./.">
+          Условия договора
+        </a>
+       </p>
+      </span>
+      <button type="submit" class="modal__form__btn-submit" data-modal>Отправить</button>
+     </form>
     </div>
   </div>
 
@@ -398,6 +447,18 @@
           </a>
         </li>
       </ul>
+    </div>
+    <div class="subscription">
+      <h3 class="footer-heading-social">Подпишитесь на рассылку</h3>
+      <form action="" method="" class="subscription__form">
+        <input class="subscription__form__field" type="email" name="email" autocomplete="email" placeholder="E-mail" required >
+        <button class="subscription__form__button" type="submit">
+          <p>Подписаться</p>
+          <svg class="subscription__form__field__icon" width="24" height="24">
+            <use href="./images/icons/sprite.svg#icon-send"></use>
+          </svg>
+        </button>
+      </form>
     </div>
    </div>
   </footer>

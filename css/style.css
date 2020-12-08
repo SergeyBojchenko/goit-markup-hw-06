@@ -110,7 +110,7 @@ h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+  margin: 0;
 }
 
 ul {
@@ -292,6 +292,7 @@ a {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .service-order-text {
@@ -313,6 +314,7 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 500ms var(--animation-timing);
+  z-index: 10;
 }
 
 .backdrop.is-hidden {
@@ -329,12 +331,199 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-
-  min-width: 528px;
-  min-height: 581px;
+  padding: 40px;
+  width: 528px;
+  height: 581px;
   background-color: var(--white);
-
+  text-align: center;
   transition: transform 500ms var(--animation-timing);
+}
+
+.modal__btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.modal__btn-close:focus,
+.modal__btn-close:hover {
+  cursor: pointer;
+}
+
+.modal__btn-close__icon {
+  width: 11px;
+  height: 11px;
+  fill: rgba(0, 0, 0, 1);
+  transition: fill 250ms var(--animation-timing);
+}
+
+.modal__btn-close:hover .modal__btn-close__icon,
+.modal__btn-close:focus .modal__btn-close__icon {
+  fill: var(--blue);
+}
+
+.modal-heading {
+  font-family: roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.17;
+  color: rgba(33, 33, 33, 1);
+  margin: 0px 0px 12px 0px;
+}
+
+.modal__form {
+  width: 100%;
+  height: 100%;
+}
+
+.field-container {
+  position: relative;
+}
+
+.field-container__label {
+  display: block;
+  text-align: left;
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  color: rgba(117, 117, 117, 1);
+}
+
+.field-container__label-margin {
+  margin-top: 10px;
+}
+
+.modal__form__field {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-top: 4px;
+  padding: 0;
+  padding-left: 42px;
+  transition: border-color 250ms var(--animation-timing);
+}
+
+.modal__form__icon {
+  position: absolute;
+  fill: rgba(33, 33, 33, 1);
+  transition: fill 250ms var(--animation-timing);
+}
+
+.modal__form__icon-name {
+  top: 32px;
+  left: 15px;
+}
+
+.modal__form__icon-tel {
+  top: 31.26px;
+  left: 14.27px;
+}
+
+.modal__form__icon-email {
+  top: 32px;
+  left: 13.5px;
+}
+
+.modal__form__field:hover,
+.modal__form__field:focus {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+
+.modal__form__field:hover + .modal__form__icon,
+.modal__form__field:focus + .modal__form__icon {
+  fill: var(--blue);
+}
+
+.modal__form__field-comment {
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.17;
+}
+
+.field-contract {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.label-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  position: ;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.checkbox-container {
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--black);
+  border-radius: 1px;
+}
+
+.checkbox-icon {
+  display: none;
+}
+
+.checkbox:checked + .checkbox-container {
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.checkbox:checked + .checkbox-container > .checkbox-icon {
+  display: block;
+}
+
+.acceptance-conditions {
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--light-grey);
+  margin-left: 7px;
+}
+
+.link-contract {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.modal__form__btn-submit {
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+
+  background-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .container {
@@ -416,7 +605,6 @@ a {
 .about-img {
   width: 370px;
   height: 294px;
-  z-index: 5;
 }
 
 .about-thumb {
@@ -432,7 +620,6 @@ a {
   background-color: rgba(47, 48, 58, 0.8);
   text-align: center;
   padding-top: 27px;
-  z-index: 55;
 }
 
 .about-img-heading {
@@ -718,4 +905,54 @@ a {
   font-weight: 700;
   line-height: 1.67;
   font-size: 26px;
+}
+
+.subscription {
+  margin-left: 93px;
+  margin-top: 12px;
+}
+
+.subscription__form {
+  display: flex;
+  margin-top: 20px;
+}
+
+.subscription__form__field {
+  background-color: var(--background-dark-grey);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscription__form__button {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  padding-left: 29px;
+  margin-left: 12px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  background-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscription__form__field__icon {
+  fill: var(--white);
+  margin-left: 10px;
 }
